@@ -1,10 +1,12 @@
 <?xml version="1.0"?>
 <launch>
-    <node pkg="rtimulib_ros" type="rtimulib_ros" name="rtimulib_node" output="screen">
+    <node pkg="rtimulib_ros" type="rtimulib_ros" name="rtimulib_node" output="screen" ns="imu">
         <param name="calibration_file_path" value="$(find rtimulib_ros)/config"/>
         <param name="calibration_file_name" value="RTIMULib" />
-        <param name="frame_id" value="map"/>
-        <param name="topic_name" value="imu"/>
-        <param name="update_rate" value="10"/>
+        <param name="frame_id" value="imu_link"/>
+        <param name="publish_data" value="true"/>
+        <param name="publish_data_raw" value="true"/>
+        <param name="publish_mag" value="true"/>
+        <param name="publish_euler" value="true"/>
     </node>
 </launch>
